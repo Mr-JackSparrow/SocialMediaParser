@@ -25,13 +25,16 @@ public class DriverProvider {
                     .amend("appium:udid", "ZD222BBYPS")
                     .amend("appium:noReset", true)
                     .amend("appium:setFullReset", false)
-                    .amend("appium:newCommandTimeout", 400)
+                    .amend("appium:newCommandTimeout", 300)
                     .amend("appium:ensureWebviewsHavePages", true)
                     .amend("appium:nativeWebScreenshot", true)
                     .amend("appium:connectHardwareKeyboard", true);
 
+            System.out.println("Driver provided first time");
             return new AndroidDriver(new URL("http://127.0.0.1:4723/"), options);
         } else {
+
+            System.out.println("Driver provided repeated time");
             return driver;
         }
     }
